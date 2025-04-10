@@ -1,0 +1,199 @@
+zabbix_export:
+  version: '7.2'
+  template_groups:
+    - uuid: e8864889c6b34b0aa8b9f1dfbf658675
+      name: TechLabs
+  templates:
+    - uuid: 8b6c83314aa5487ea742e5c878bf7923
+      template: 'EasyMonitor - Edge Voltage 96V'
+      name: 'EasyMonitor - Edge Voltage 96V'
+      groups:
+        - name: TechLabs
+      items:
+        - uuid: a0340821e376421096bb4b24fb538a3d
+          name: board
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.1.0.4
+          key: board
+          history: 90d
+          value_type: TEXT
+        - uuid: a4a35302abda48a6b261722a3e0c5eed
+          name: dcvoltage0
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.2.1.1
+          key: dcvoltage0
+          delay: 30s
+          history: 90d
+          value_type: FLOAT
+          units: V
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.01'
+          triggers:
+            - uuid: ce171c8834ea4cb8be8fb44c0e5d7fbe
+              expression: 'last(/EasyMonitor - Edge Voltage 96V/dcvoltage0,#1)>={$DC_MAX_VOLTAGE0}'
+              name: 'Canal 1 DC - Tensão Alta'
+              priority: HIGH
+            - uuid: 34c9e8f5401d4618a93e38e3ab60f5e1
+              expression: 'last(/EasyMonitor - Edge Voltage 96V/dcvoltage0,#1)<={$DC_MIN_VOLTAGE0}'
+              name: 'Canal 1 DC - Tensão Baixa'
+              priority: HIGH
+        - uuid: b4b9ef28d02c4a0a8765f61da4a5d784
+          name: dcvoltage0Name
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.2.0.1
+          key: dcvoltage0Name
+          delay: 30s
+          history: 90d
+          value_type: TEXT
+        - uuid: 8d31f2e8bd6349d6b9241fe184475bd8
+          name: dcvoltage1
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.2.1.2
+          key: dcvoltage1
+          delay: 30s
+          value_type: FLOAT
+          units: V
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.01'
+          triggers:
+            - uuid: 7a4a628922c944ea88fe31ed5a4f9d27
+              expression: 'last(/EasyMonitor - Edge Voltage 96V/dcvoltage1,#1)>={$DC_MAX_VOLTAGE1}'
+              name: 'Canal 2 DC - Tensão Alta'
+              priority: HIGH
+            - uuid: fdbec457395d4346a17a7f68f58a9435
+              expression: 'last(/EasyMonitor - Edge Voltage 96V/dcvoltage1,#1)<={$DC_MIN_VOLTAGE1}'
+              name: 'Canal 2 DC - Tensão Baixa'
+              priority: HIGH
+        - uuid: 0a779804c2cb4c11888989d2373efedb
+          name: dcvoltage1Name
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.2.0.2
+          key: dcvoltage1Name
+          delay: 30s
+          history: 90d
+          value_type: TEXT
+        - uuid: 2723c4e4ca754d8a84b36ee5a99cf7f5
+          name: developer
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.1.0.1
+          key: developer
+          history: 90d
+          value_type: TEXT
+        - uuid: 5e2b71df1a5646aa96dddf6e65d6334e
+          name: icmp
+          type: SIMPLE
+          key: icmpping
+          triggers:
+            - uuid: a727a11f78354e2380eeed49de6bdf3c
+              expression: 'last(/EasyMonitor - Edge Voltage 96V/icmpping,#1)=0'
+              name: 'Device Offline'
+              priority: DISASTER
+        - uuid: 21f3dc757cae4932928893e3d494084f
+          name: sensor0Name
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.3.0.1
+          key: sensor0Name
+          delay: 30s
+          history: 90d
+          value_type: TEXT
+        - uuid: 6d42b7b887f4407fa81b8311005e031a
+          name: system
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.1.0.2
+          key: system
+          history: 90d
+          value_type: TEXT
+        - uuid: 0fd835a9c5f74adfa28afc77d7458753
+          name: temperature0
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.3.1.1
+          key: temperature0
+          delay: 30s
+          history: 90d
+          value_type: FLOAT
+          units: °C
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.01'
+          triggers:
+            - uuid: fca16f2140444853a8c34751c9a37ea8
+              expression: 'last(/EasyMonitor - Edge Voltage 96V/temperature0,#1)>={$TEMP_MAX0}'
+              name: 'Canal 1 Sensor - Temperatura Alta'
+              priority: HIGH
+            - uuid: 5e00319599e3451ba1c424f3521dc3fa
+              expression: 'last(/EasyMonitor - Edge Voltage 96V/temperature0,#1)<={$TEMP_MIN0}'
+              name: 'Canal 1 Sensor - Temperatura Baixa'
+              priority: HIGH
+        - uuid: 8a18e9084dce4d80bd3a902c4662f3ad
+          name: version
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.1.0.3
+          key: version
+          history: 90d
+          value_type: TEXT
+      macros:
+        - macro: '{$DC_MAX_VOLTAGE0}'
+          value: '50'
+        - macro: '{$DC_MAX_VOLTAGE1}'
+          value: '50'
+        - macro: '{$DC_MIN_VOLTAGE0}'
+          value: '3'
+        - macro: '{$DC_MIN_VOLTAGE1}'
+          value: '3'
+        - macro: '{$TEMP_MAX0}'
+          value: '40'
+        - macro: '{$TEMP_MIN0}'
+          value: '10'
+  graphs:
+    - uuid: c4b26067c63f430ba5a28f2c01effa0c
+      name: dcvoltage0
+      graph_items:
+        - color: 1A7C11
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Edge Voltage 96V'
+            key: dcvoltage0
+    - uuid: 90c6c75396aa475e8c4b949aa14cd048
+      name: dcvoltage1
+      graph_items:
+        - color: 1A7C11
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Edge Voltage 96V'
+            key: dcvoltage1
+    - uuid: 47e837e049cc48f8aff14fef1684d536
+      name: dcvoltageAll
+      graph_items:
+        - color: 1A7C11
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Edge Voltage 96V'
+            key: dcvoltage0
+        - sortorder: '1'
+          color: '274482'
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Edge Voltage 96V'
+            key: dcvoltage1
+    - uuid: ae3e1b88abd1405786badf7fb7d23edc
+      name: sensor0
+      graph_items:
+        - sortorder: '1'
+          color: '274482'
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Edge Voltage 96V'
+            key: temperature0
+    - uuid: 9ee3b4ec14694cfa9f5da4693d5ad8d1
+      name: temperature0
+      graph_items:
+        - color: 1A7C11
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Edge Voltage 96V'
+            key: temperature0

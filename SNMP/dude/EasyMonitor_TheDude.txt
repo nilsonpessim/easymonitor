@@ -1,0 +1,34 @@
+Lista de OIDs SNMP
+
+Informacoes do Sistema
+.1.3.6.1.2.1.47.1.1.1.1.0.1 - Tipo => String, Descricao => TechLabs Technology
+.1.3.6.1.2.1.47.1.1.1.1.0.2 - Tipo => String, Descricao => Nome do Software
+.1.3.6.1.2.1.47.1.1.1.1.0.3 - Tipo => String, Descricao => Versao do Software
+.1.3.6.1.2.1.47.1.1.1.1.0.4 - Tipo => String, Descricao => Versao do Hardware
+
+Monitor Tensao DC/AC
+.1.3.6.1.2.1.47.1.1.1.2.0.1 - Tipo => String, Descricao => Nome do Canal 1 DC
+.1.3.6.1.2.1.47.1.1.1.2.0.2 - Tipo => String, Descricao => Nome do Canal 2 DC
+.1.3.6.1.2.1.47.1.1.1.2.0.3 - Tipo => String, Descricao => Nome do Canal 1 AC
+.1.3.6.1.2.1.47.1.1.1.2.1.1 - Tipo => Integer, Descricao => Valor do Canal 1 DC
+.1.3.6.1.2.1.47.1.1.1.2.1.2 - Tipo => Integer, Descricao => Valor do Canal 2 DC
+.1.3.6.1.2.1.47.1.1.1.2.2.3 - Tipo => Integer, Descricao => Valor do Canal 1 AC
+
+Monitor de Temperatura e Umidade
+.1.3.6.1.2.1.47.1.1.1.3.0.1 - Tipo => String, Descricao => Nome do Canal Sensor 1
+.1.3.6.1.2.1.47.1.1.1.3.0.2 - Tipo => String, Descricao => Nome do Canal Sensor 2
+.1.3.6.1.2.1.47.1.1.1.3.1.1 - Tipo => Integer, Descricao => Valor de Temp do Canal 1
+.1.3.6.1.2.1.47.1.1.1.3.1.2 - Tipo => Integer, Descricao => Valor de Umidade do Canal 1
+.1.3.6.1.2.1.47.1.1.1.3.2.1 - Tipo => Integer, Descricao => Valor de Temp do Canal 2
+.1.3.6.1.2.1.47.1.1.1.3.2.2 - Tipo => Integer, Descricao => Valor de Umidade do Canal 2
+
+
+[oid("1.3.6.1.2.1.47.1.1.1.2.0.1")]: [oid("1.3.6.1.2.1.47.1.1.1.2.1.1")*0.01] Volts
+[oid("1.3.6.1.2.1.47.1.1.1.2.0.2")]: [oid("1.3.6.1.2.1.47.1.1.1.2.1.2")*0.01] Volts
+
+bot techlabs94_bot
+8096968357:AAG5jP05xtxdfIJ_QftcNmX2Qp6RlxN0QAM
+
+/tool fetch url="https://api.telegram.org/bot8096968357:AAG5jP05xtxdfIJ_QftcNmX2Qp6RlxN0QAM/sendMessage?chat_id=7124695464&text=[Device.Name] - [Device.FirstAddress] | [Probe.Name]: [Service.Status]"
+
+voltagedc.0.low

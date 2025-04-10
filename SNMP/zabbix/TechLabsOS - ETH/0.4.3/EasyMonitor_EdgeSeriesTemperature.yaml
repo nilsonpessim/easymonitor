@@ -1,0 +1,231 @@
+zabbix_export:
+  version: '7.2'
+  template_groups:
+    - uuid: e8864889c6b34b0aa8b9f1dfbf658675
+      name: TechLabs
+  templates:
+    - uuid: 502e6c08858e42eb8993701ae75603a4
+      template: 'EasyMonitor - Edge Temp Series'
+      name: 'EasyMonitor - Edge Temp Series'
+      groups:
+        - name: TechLabs
+      items:
+        - uuid: 5e8db60cad414adeb87afb0cf97f2c15
+          name: board
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.1.0.4
+          key: board
+          history: 90d
+          value_type: TEXT
+        - uuid: 05daefc719e044c1b166a904520d3d3c
+          name: developer
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.1.0.1
+          key: developer
+          history: 90d
+          value_type: TEXT
+        - uuid: cdc2ed19461249cebb458399fc55700d
+          name: humidity0
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.3.1.2
+          key: humidity0
+          delay: 30s
+          history: 90d
+          value_type: FLOAT
+          units: '%'
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.01'
+          triggers:
+            - uuid: 13cca3b7024f465db4265b20eba4aab5
+              expression: 'last(/EasyMonitor - Edge Temp Series/humidity0,#1)>={$HUM_MAX0}'
+              name: 'Canal 1 Sensor - Umidade Alta'
+              priority: WARNING
+            - uuid: ff421b2d38314888b10c32fef001a8e1
+              expression: 'last(/EasyMonitor - Edge Temp Series/humidity0,#1)<={$HUM_MIN0}'
+              name: 'Canal 1 Sensor - Umidade Baixa'
+              priority: WARNING
+        - uuid: a9aba9c8f7b3475c8e8829d6d979dbb5
+          name: humidity1
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.3.2.2
+          key: humidity1
+          delay: 30s
+          history: 90d
+          value_type: FLOAT
+          units: '%'
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.01'
+          triggers:
+            - uuid: 7cc878473e6a42fda4def6d323d09b98
+              expression: 'last(/EasyMonitor - Edge Temp Series/humidity1,#1)>={$HUM_MAX1}'
+              name: 'Canal 2 Sensor - Umidade Alta'
+              priority: WARNING
+            - uuid: d8cb28923d76485c927974dcbb006cda
+              expression: 'last(/EasyMonitor - Edge Temp Series/humidity1,#1)<={$HUM_MIN1}'
+              name: 'Canal 2 Sensor - Umidade Baixa'
+              priority: WARNING
+        - uuid: 98124ecd1f7a42c5b8224add6afd7d2a
+          name: icmp
+          type: SIMPLE
+          key: icmpping
+          triggers:
+            - uuid: 9f93e815d5654d458a3213a3c90c4d95
+              expression: 'last(/EasyMonitor - Edge Temp Series/icmpping,#1)=0'
+              name: 'Device Offline'
+              priority: DISASTER
+        - uuid: b9d3a83f5a8740398442ced5fc61b50d
+          name: sensor0Name
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.3.0.1
+          key: sensor0Name
+          delay: 30s
+          history: 90d
+          value_type: TEXT
+        - uuid: d56daa98aa9f4d2fbbf59984df33116e
+          name: sensor1Name
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.3.0.2
+          key: sensor1Name
+          delay: 30s
+          history: 90d
+          value_type: TEXT
+        - uuid: d69883f4bd1c401fb51c1859a5dbbf94
+          name: system
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.1.0.2
+          key: system
+          history: 90d
+          value_type: TEXT
+        - uuid: be78c6dc48714a66a3d18269574b4633
+          name: temperature0
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.3.1.1
+          key: temperature0
+          delay: 30s
+          history: 90d
+          value_type: FLOAT
+          units: °C
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.01'
+          triggers:
+            - uuid: 68e7ff126db14fddadd103f921c64c4f
+              expression: 'last(/EasyMonitor - Edge Temp Series/temperature0,#1)>={$TEMP_MAX0}'
+              name: 'Canal 1 Sensor - Temperatura Alta'
+              priority: WARNING
+            - uuid: 542271ffdbae4092a471d5d00509fb7d
+              expression: 'last(/EasyMonitor - Edge Temp Series/temperature0,#1)<={$TEMP_MIN0}'
+              name: 'Canal 1 Sensor - Temperatura Baixa'
+              priority: WARNING
+        - uuid: e3848c12f2e94506ae57271091dc9208
+          name: temperature1
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.3.2.1
+          key: temperature1
+          delay: 30s
+          history: 90d
+          value_type: FLOAT
+          units: °C
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.01'
+          triggers:
+            - uuid: 1d08a681ed924af0aecea980472b6706
+              expression: 'last(/EasyMonitor - Edge Temp Series/temperature1,#1)>={$TEMP_MAX1}'
+              name: 'Canal 2 Sensor - Temperatura Alta'
+              priority: WARNING
+            - uuid: dc14fa78e4d947b1afa6678f2b9b58f4
+              expression: 'last(/EasyMonitor - Edge Temp Series/temperature1,#1)<={$TEMP_MIN1}'
+              name: 'Canal 2 Sensor - Temperatura Baixa'
+              priority: WARNING
+        - uuid: 3abdcbcdb7f245a1b90df14d8e15023a
+          name: version
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.1.0.3
+          key: version
+          history: 90d
+          value_type: TEXT
+      macros:
+        - macro: '{$HUM_MAX0}'
+          value: '100'
+        - macro: '{$HUM_MAX1}'
+          value: '100'
+        - macro: '{$HUM_MIN0}'
+          value: '10'
+        - macro: '{$HUM_MIN1}'
+          value: '10'
+        - macro: '{$TEMP_MAX0}'
+          value: '40'
+        - macro: '{$TEMP_MAX1}'
+          value: '40'
+        - macro: '{$TEMP_MIN0}'
+          value: '10'
+        - macro: '{$TEMP_MIN1}'
+          value: '10'
+  graphs:
+    - uuid: f1e83957266548fb97aa943f87685e2e
+      name: humidity0
+      graph_items:
+        - color: 1A7C11
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Edge Temp Series'
+            key: humidity0
+    - uuid: d2c5a259774848b584d90f6bcae75473
+      name: humidity1
+      graph_items:
+        - color: 1A7C11
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Edge Temp Series'
+            key: humidity1
+    - uuid: 6f80cf0a698f447991f666c559a8c9de
+      name: sensor0
+      graph_items:
+        - color: 1A7C11
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Edge Temp Series'
+            key: humidity0
+        - sortorder: '1'
+          color: '274482'
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Edge Temp Series'
+            key: temperature0
+    - uuid: a30a7ecdacf14fdb86c00c39b9efcfc1
+      name: sensor1
+      graph_items:
+        - color: 1A7C11
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Edge Temp Series'
+            key: humidity1
+        - sortorder: '1'
+          color: '274482'
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Edge Temp Series'
+            key: temperature1
+    - uuid: e6a75fcc24244f9ea71b002527c9d40c
+      name: temperature0
+      graph_items:
+        - color: 1A7C11
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Edge Temp Series'
+            key: temperature0
+    - uuid: 5d4dc3ebce204da385d7fb1070b1f81b
+      name: temperature1
+      graph_items:
+        - color: 1A7C11
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Edge Temp Series'
+            key: temperature1

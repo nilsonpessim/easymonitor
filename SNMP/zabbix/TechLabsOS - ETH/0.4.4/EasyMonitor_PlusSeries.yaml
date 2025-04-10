@@ -1,0 +1,369 @@
+zabbix_export:
+  version: '7.2'
+  template_groups:
+    - uuid: e8864889c6b34b0aa8b9f1dfbf658675
+      name: TechLabs
+  templates:
+    - uuid: 1f00622234864a1a8e0d7d5e018541bd
+      template: 'EasyMonitor - Plus Series - 0.4.4'
+      name: 'EasyMonitor - Plus Series - 0.4.4'
+      groups:
+        - name: TechLabs
+      items:
+        - uuid: 4c88ba60ff6f4be9a0c018600936e7ae
+          name: acvoltage0
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.2.2.3
+          key: acvoltage0
+          delay: 30s
+          history: 90d
+          triggers:
+            - uuid: 8dd4963d92974b83afd5535f2fbb6c37
+              expression: 'last(/EasyMonitor - Plus Series - 0.4.4/acvoltage0,#1)=0'
+              name: 'Monitor de Rede AC'
+              priority: DISASTER
+        - uuid: 5b124683b722473586a8cda1d02cb0f3
+          name: acvoltage0Name
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.2.0.3
+          key: acvoltage0Name
+          delay: 30s
+          history: 90d
+          value_type: TEXT
+        - uuid: acf2201dedc4429484dbafbc8b009a4f
+          name: board
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.1.0.4
+          key: board
+          history: 90d
+          value_type: TEXT
+        - uuid: fc0d5bc313504691b2eae48977d097fb
+          name: dcvoltage0
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.2.1.1
+          key: dcvoltage0
+          delay: 30s
+          history: 90d
+          value_type: FLOAT
+          units: V
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.01'
+          triggers:
+            - uuid: 43aaf19fc49d44d0b80076d6ba9171ab
+              expression: 'last(/EasyMonitor - Plus Series - 0.4.4/dcvoltage0,#1)>={$DC_MAX_VOLTAGE0}'
+              name: 'Canal 1 DC - Tensão Alta - {ITEM.LASTVALUE1}'
+              priority: HIGH
+            - uuid: d5c8a88e767a4c809676397dd2b8f497
+              expression: 'last(/EasyMonitor - Plus Series - 0.4.4/dcvoltage0,#1)<={$DC_MIN_VOLTAGE0}'
+              name: 'Canal 1 DC - Tensão Baixa - {ITEM.LASTVALUE1}'
+              priority: HIGH
+        - uuid: 9cd6c4e0feee4b9bb623c84a8a352253
+          name: dcvoltage0Name
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.2.0.1
+          key: dcvoltage0Name
+          delay: 30s
+          history: 90d
+          value_type: TEXT
+        - uuid: db8f8931242049d3a4f8c7ca89278967
+          name: dcvoltage1
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.2.1.2
+          key: dcvoltage1
+          delay: 30s
+          value_type: FLOAT
+          units: V
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.01'
+          triggers:
+            - uuid: 1a0c54abfa5b4e88bd4f55cf063c2862
+              expression: 'last(/EasyMonitor - Plus Series - 0.4.4/dcvoltage1,#1)>={$DC_MAX_VOLTAGE1}'
+              name: 'Canal 2 DC - Tensão Alta - {ITEM.LASTVALUE1}'
+              priority: HIGH
+            - uuid: bb76797d72174a7a81c77cf64248ebad
+              expression: 'last(/EasyMonitor - Plus Series - 0.4.4/dcvoltage1,#1)<={$DC_MIN_VOLTAGE1}'
+              name: 'Canal 2 DC - Tensão Baixa - {ITEM.LASTVALUE1}'
+              priority: HIGH
+        - uuid: 9f4158d1ca8941f3a7ede33bdba5d1ce
+          name: dcvoltage1Name
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.2.0.2
+          key: dcvoltage1Name
+          delay: 30s
+          history: 90d
+          value_type: TEXT
+        - uuid: 2496f62d94a24c69a5aa92da0f5274c7
+          name: developer
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.1.0.1
+          key: developer
+          history: 90d
+          value_type: TEXT
+        - uuid: 916f13ffb6154b908c136e93737dafbd
+          name: hostname
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.1.0.5
+          key: hostname
+          history: 90d
+          value_type: TEXT
+        - uuid: 25a0759a94c045c7ba7cb4ff31ab3a0b
+          name: humidity0
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.3.1.2
+          key: humidity0
+          delay: 30s
+          history: 90d
+          value_type: FLOAT
+          units: '%'
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.01'
+          triggers:
+            - uuid: 94f4ad795b23453991c13ea5b2f42b3b
+              expression: 'last(/EasyMonitor - Plus Series - 0.4.4/humidity0,#1)>={$HUM_MAX0}'
+              name: 'Canal 1 Sensor - Umidade Alta - {ITEM.LASTVALUE1}'
+              priority: WARNING
+            - uuid: cfacb45d05c8487da5daa335c8c2ac23
+              expression: 'last(/EasyMonitor - Plus Series - 0.4.4/humidity0,#1)<={$HUM_MIN0}'
+              name: 'Canal 1 Sensor - Umidade Baixa - {ITEM.LASTVALUE1}'
+              priority: WARNING
+        - uuid: f691486827c34cdd97559ae0b09b1f37
+          name: humidity1
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.3.2.2
+          key: humidity1
+          delay: 30s
+          history: 90d
+          value_type: FLOAT
+          units: '%'
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.01'
+          triggers:
+            - uuid: a0dcb776e3e64f7bb8fa1f061939dace
+              expression: 'last(/EasyMonitor - Plus Series - 0.4.4/humidity1,#1)>={$HUM_MAX1}'
+              name: 'Canal 2 Sensor - Umidade Alta - {ITEM.LASTVALUE1}'
+              priority: WARNING
+            - uuid: d75458759f3d4c4fa5303ca4e9a46c1f
+              expression: 'last(/EasyMonitor - Plus Series - 0.4.4/humidity1,#1)<={$HUM_MIN1}'
+              name: 'Canal 2 Sensor - Umidade Baixa - {ITEM.LASTVALUE1}'
+              priority: WARNING
+        - uuid: c07f377d802e4f6481189ff0a976890b
+          name: icmp
+          type: SIMPLE
+          key: icmpping
+          triggers:
+            - uuid: de0d06c5c1f14e7f9096e32024e1af21
+              expression: 'last(/EasyMonitor - Plus Series - 0.4.4/icmpping,#1)=0'
+              name: 'Device Offline'
+              priority: DISASTER
+        - uuid: 17fc8008d2424a1db43d89b513768d79
+          name: ip
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.1.0.6
+          key: ip
+          history: 90d
+          value_type: TEXT
+        - uuid: 559b2c0495d249b3a1a41e4bea7ff590
+          name: mac
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.1.0.7
+          key: mac
+          history: 90d
+          value_type: TEXT
+        - uuid: f49b3ecc461541e99bbe667b7c0695b7
+          name: sensor0Name
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.3.0.1
+          key: sensor0Name
+          delay: 30s
+          history: 90d
+          value_type: TEXT
+        - uuid: 548f89174050454d922c602e1c5508f8
+          name: sensor1Name
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.3.0.2
+          key: sensor1Name
+          delay: 30s
+          history: 90d
+          value_type: TEXT
+        - uuid: 47a1742b2f2a418ea0e63dd65268c55f
+          name: system
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.1.0.2
+          key: system
+          history: 90d
+          value_type: TEXT
+        - uuid: 91b0400ea5fb4f9ab040f5b843d89ce0
+          name: temperature0
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.3.1.1
+          key: temperature0
+          delay: 30s
+          history: 90d
+          value_type: FLOAT
+          units: °C
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.01'
+          triggers:
+            - uuid: 0060c2e5f703430b9339484843f85949
+              expression: 'last(/EasyMonitor - Plus Series - 0.4.4/temperature0,#1)>={$TEMP_MAX0}'
+              name: 'Canal 1 Sensor - Temperatura Alta - {ITEM.LASTVALUE1}'
+              priority: WARNING
+            - uuid: b37bc0ae015a444190ee3e8b3fb389d9
+              expression: 'last(/EasyMonitor - Plus Series - 0.4.4/temperature0,#1)<={$TEMP_MIN0}'
+              name: 'Canal 1 Sensor - Temperatura Baixa - {ITEM.LASTVALUE1}'
+              priority: WARNING
+        - uuid: 0494885ef74742e0b0f56a809f783b09
+          name: temperature1
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.3.2.1
+          key: temperature1
+          delay: 30s
+          history: 90d
+          value_type: FLOAT
+          units: °C
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.01'
+          triggers:
+            - uuid: 2f193e97d2bb47f29e55512cd13ec6ee
+              expression: 'last(/EasyMonitor - Plus Series - 0.4.4/temperature1,#1)>={$TEMP_MAX1}'
+              name: 'Canal 2 Sensor - Temperatura Alta - {ITEM.LASTVALUE1}'
+              priority: WARNING
+            - uuid: 8af9f9d6b86b4e99a302ecb0c92cb09b
+              expression: 'last(/EasyMonitor - Plus Series - 0.4.4/temperature1,#1)<={$TEMP_MIN1}'
+              name: 'Canal 2 Sensor - Temperatura Baixa - {ITEM.LASTVALUE1}'
+              priority: WARNING
+        - uuid: 0273bd477c47485f84b62a4df0aca8d9
+          name: version
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.1.0.3
+          key: version
+          history: 90d
+          value_type: TEXT
+      macros:
+        - macro: '{$DC_MAX_VOLTAGE0}'
+          value: '50'
+        - macro: '{$DC_MAX_VOLTAGE1}'
+          value: '50'
+        - macro: '{$DC_MIN_VOLTAGE0}'
+          value: '3'
+        - macro: '{$DC_MIN_VOLTAGE1}'
+          value: '3'
+        - macro: '{$HUM_MAX0}'
+          value: '100'
+        - macro: '{$HUM_MAX1}'
+          value: '100'
+        - macro: '{$HUM_MIN0}'
+          value: '10'
+        - macro: '{$HUM_MIN1}'
+          value: '10'
+        - macro: '{$TEMP_MAX0}'
+          value: '40'
+        - macro: '{$TEMP_MAX1}'
+          value: '40'
+        - macro: '{$TEMP_MIN0}'
+          value: '10'
+        - macro: '{$TEMP_MIN1}'
+          value: '10'
+  graphs:
+    - uuid: ee533e73fb8343b8ab67aaa7224c5da3
+      name: dcvoltage0
+      graph_items:
+        - color: 1A7C11
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Plus Series - 0.4.4'
+            key: dcvoltage0
+    - uuid: e3bdeb09917346b5b6aace38ed521279
+      name: dcvoltage1
+      graph_items:
+        - color: 1A7C11
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Plus Series - 0.4.4'
+            key: dcvoltage1
+    - uuid: 3aaf8e9b354b4ac4b3ddbaffe2fd157a
+      name: dcvoltageAll
+      graph_items:
+        - color: 1A7C11
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Plus Series - 0.4.4'
+            key: dcvoltage0
+        - sortorder: '1'
+          color: '274482'
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Plus Series - 0.4.4'
+            key: dcvoltage1
+    - uuid: f42686fb42454e5a8e80662d46f93505
+      name: humidity0
+      graph_items:
+        - color: 1A7C11
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Plus Series - 0.4.4'
+            key: humidity0
+    - uuid: ee1bbf0170a14734a441fd1d3261dfe6
+      name: humidity1
+      graph_items:
+        - color: 1A7C11
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Plus Series - 0.4.4'
+            key: humidity1
+    - uuid: 2ddd3036068d4ee1b9c973d5cab1719e
+      name: sensor0
+      graph_items:
+        - color: 1A7C11
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Plus Series - 0.4.4'
+            key: humidity0
+        - sortorder: '1'
+          color: '274482'
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Plus Series - 0.4.4'
+            key: temperature0
+    - uuid: 4e116b580afb43f592877413455f2017
+      name: sensor1
+      graph_items:
+        - color: 1A7C11
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Plus Series - 0.4.4'
+            key: humidity1
+        - sortorder: '1'
+          color: '274482'
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Plus Series - 0.4.4'
+            key: temperature1
+    - uuid: 04eef34da05044cebd7acde2c95ac26d
+      name: temperature0
+      graph_items:
+        - color: 1A7C11
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Plus Series - 0.4.4'
+            key: temperature0
+    - uuid: eb9f25e5918c493b825bd8670bd83d50
+      name: temperature1
+      graph_items:
+        - color: 1A7C11
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Plus Series - 0.4.4'
+            key: temperature1

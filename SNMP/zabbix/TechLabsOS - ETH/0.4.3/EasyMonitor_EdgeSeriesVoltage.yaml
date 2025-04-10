@@ -1,0 +1,291 @@
+zabbix_export:
+  version: '7.2'
+  template_groups:
+    - uuid: e8864889c6b34b0aa8b9f1dfbf658675
+      name: TechLabs
+  templates:
+    - uuid: 0df7d4bbc811490794c46c8f60fefc45
+      template: 'EasyMonitor - Edge Voltage Series'
+      name: 'EasyMonitor - Edge Voltage Series'
+      groups:
+        - name: TechLabs
+      items:
+        - uuid: d13db7c01c894054a1e47623773e5079
+          name: acvoltage0
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.2.2.3
+          key: acvoltage0
+          delay: 30s
+          history: 90d
+        - uuid: c04630f1f11342089debe03a6ad6c98b
+          name: acvoltage0Name
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.2.0.3
+          key: acvoltage0Name
+          delay: 30s
+          history: 90d
+          value_type: TEXT
+        - uuid: 81cbfa761a6b4f6e9c675b94af18d4e9
+          name: board
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.1.0.4
+          key: board
+          history: 90d
+          value_type: TEXT
+        - uuid: faab1d7e6fce45428cb72b3d18d87e5f
+          name: dcvoltage0
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.2.1.1
+          key: dcvoltage0
+          delay: 30s
+          history: 90d
+          value_type: FLOAT
+          units: V
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.01'
+          triggers:
+            - uuid: d4f6e18e07f74f129626b4ff39d9f3c8
+              expression: 'last(/EasyMonitor - Edge Voltage Series/dcvoltage0,#1)>={$DC_MAX_VOLTAGE0}'
+              name: 'Canal 1 DC - Tensão Alta'
+              priority: HIGH
+            - uuid: 2a32c9b4e4c942a6a1c0765fb1be549a
+              expression: 'last(/EasyMonitor - Edge Voltage Series/dcvoltage0,#1)<={$DC_MIN_VOLTAGE0}'
+              name: 'Canal 1 DC - Tensão Baixa'
+              priority: HIGH
+        - uuid: b25d8b2d4f9b4109a091107fbafb0ec5
+          name: dcvoltage0Name
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.2.0.1
+          key: dcvoltage0Name
+          delay: 30s
+          history: 90d
+          value_type: TEXT
+        - uuid: f2ba14079c134bcfb8fb3d2ff8061128
+          name: dcvoltage1
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.2.1.2
+          key: dcvoltage1
+          delay: 30s
+          value_type: FLOAT
+          units: V
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.01'
+          triggers:
+            - uuid: 3a0c9e593bd142e888638103e1f11bcc
+              expression: 'last(/EasyMonitor - Edge Voltage Series/dcvoltage1,#1)>={$DC_MAX_VOLTAGE1}'
+              name: 'Canal 2 DC - Tensão Alta'
+              priority: HIGH
+            - uuid: 47bc1f5d466c4272ae38a0d8754cfb33
+              expression: 'last(/EasyMonitor - Edge Voltage Series/dcvoltage1,#1)<={$DC_MIN_VOLTAGE1}'
+              name: 'Canal 2 DC - Tensão Baixa'
+              priority: HIGH
+        - uuid: 5d0c98cb695a47e1b48f4534f64324c6
+          name: dcvoltage1Name
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.2.0.2
+          key: dcvoltage1Name
+          delay: 30s
+          history: 90d
+          value_type: TEXT
+        - uuid: 0d328ed7156041fd8d8edfc06ee5bfdf
+          name: developer
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.1.0.1
+          key: developer
+          history: 90d
+          value_type: TEXT
+        - uuid: fdd31246791f40c3a2e4f92f6c432f97
+          name: humidity0
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.3.1.2
+          key: humidity0
+          delay: 30s
+          history: 90d
+          value_type: FLOAT
+          units: '%'
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.01'
+        - uuid: 758c2b07598e4ed3b89c86d224e53928
+          name: humidity1
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.3.2.2
+          key: humidity1
+          delay: 30s
+          history: 90d
+          value_type: FLOAT
+          units: '%'
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.01'
+        - uuid: 96143426420f470c93a9a4ff0a02a7dd
+          name: icmp
+          type: SIMPLE
+          key: icmpping
+          triggers:
+            - uuid: 2e8db3cf46a84567a5fa41fe41d404e5
+              expression: 'last(/EasyMonitor - Edge Voltage Series/icmpping,#1)=0'
+              name: 'Device Offline'
+              priority: DISASTER
+        - uuid: 19ccf0bf1be647f98176dee700b46fa4
+          name: sensor0Name
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.3.0.1
+          key: sensor0Name
+          delay: 30s
+          history: 90d
+          value_type: TEXT
+        - uuid: fe377c94576f4b18abc6757584fab428
+          name: sensor1Name
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.3.0.2
+          key: sensor1Name
+          delay: 30s
+          history: 90d
+          value_type: TEXT
+        - uuid: f18d44a97d7d42fb84339e5f394c4ef6
+          name: system
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.1.0.2
+          key: system
+          history: 90d
+          value_type: TEXT
+        - uuid: 3c408d2b19be4eb3a205d07785f348ff
+          name: temperature0
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.3.1.1
+          key: temperature0
+          delay: 30s
+          history: 90d
+          value_type: FLOAT
+          units: °C
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.01'
+        - uuid: a61546e4df66443cb54b9881c9b284d9
+          name: temperature1
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.3.2.1
+          key: temperature1
+          delay: 30s
+          history: 90d
+          value_type: FLOAT
+          units: °C
+          preprocessing:
+            - type: MULTIPLIER
+              parameters:
+                - '0.01'
+        - uuid: 4a31dbc1c41b439da53895622e429627
+          name: version
+          type: SNMP_AGENT
+          snmp_oid: .1.3.6.1.2.1.47.1.1.1.1.0.3
+          key: version
+          history: 90d
+          value_type: TEXT
+      macros:
+        - macro: '{$DC_MAX_VOLTAGE0}'
+          value: '50'
+        - macro: '{$DC_MAX_VOLTAGE1}'
+          value: '50'
+        - macro: '{$DC_MIN_VOLTAGE0}'
+          value: '3'
+        - macro: '{$DC_MIN_VOLTAGE1}'
+          value: '3'
+  graphs:
+    - uuid: 499b3fc677144646a4c5d7c84c650310
+      name: dcvoltage0
+      graph_items:
+        - color: 1A7C11
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Edge Voltage Series'
+            key: dcvoltage0
+    - uuid: 0d1870a781cf4511bc301cf36b045dbd
+      name: dcvoltage1
+      graph_items:
+        - color: 1A7C11
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Edge Voltage Series'
+            key: dcvoltage1
+    - uuid: d69bda7c4a804216895b23e4dcce708f
+      name: dcvoltageAll
+      graph_items:
+        - color: 1A7C11
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Edge Voltage Series'
+            key: dcvoltage0
+        - sortorder: '1'
+          color: '274482'
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Edge Voltage Series'
+            key: dcvoltage1
+    - uuid: b351e43e19b64af69b59ab049d02819a
+      name: humidity0
+      graph_items:
+        - color: 1A7C11
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Edge Voltage Series'
+            key: humidity0
+    - uuid: f1c4a0ca3cbb404aaf82635fb1a4b54f
+      name: humidity1
+      graph_items:
+        - color: 1A7C11
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Edge Voltage Series'
+            key: humidity1
+    - uuid: 54a889d252f240bf81dc617b6448ce50
+      name: sensor0
+      graph_items:
+        - color: 1A7C11
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Edge Voltage Series'
+            key: humidity0
+        - sortorder: '1'
+          color: '274482'
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Edge Voltage Series'
+            key: temperature0
+    - uuid: ce3304dca26b4d63847391f0025be343
+      name: sensor1
+      graph_items:
+        - color: 1A7C11
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Edge Voltage Series'
+            key: humidity1
+        - sortorder: '1'
+          color: '274482'
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Edge Voltage Series'
+            key: temperature1
+    - uuid: 803eeac865564a15b36f7e6af45fcd06
+      name: temperature0
+      graph_items:
+        - color: 1A7C11
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Edge Voltage Series'
+            key: temperature0
+    - uuid: 29cd2c2fa0904048991640522be6e7a1
+      name: temperature1
+      graph_items:
+        - color: 1A7C11
+          calc_fnc: ALL
+          item:
+            host: 'EasyMonitor - Edge Voltage Series'
+            key: temperature1
