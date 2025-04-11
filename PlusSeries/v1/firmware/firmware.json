@@ -2,6 +2,5 @@
     "version": "0.4.4",
     "build": "044-20250411",
     "url": "https://github.com/nilsonpessim/easymonitor/raw/refs/heads/main/PlusSeries/v2/firmware/empv2-0.4.4-build-044-20250410.bin",
-    "changelog": "Correção de texto e ajustes visuais.",
-    "mandatory": false
-  }
+    "changelog": "Correção de texto e ajustes visuais."
+}
