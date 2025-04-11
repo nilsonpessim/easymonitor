@@ -3,7 +3,7 @@
 ## 📌 ChangeLog — TechLabsOS
 
 ---
-#### [Download v0.4.4](./empv2-0.4.4-build-044-20250411.bin)
+#### [Download v0.4.4](https://github.com/nilsonpessim/easymonitor/raw/refs/heads/main/PlusSeries/v2/firmware/empv2-0.4.4-build-044-20250411.bin)
 ---
 ## 🔄 v0.4.4
 ### *Build 044-20250411* (11/04/2025)
