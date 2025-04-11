@@ -1,4 +1,4 @@
-# EasyMonitor - PlusSeries v2
+# EasyMonitor - PlusSeries
 
 ## 📌 ChangeLog — TechLabsOS
 
