@@ -6,6 +6,7 @@
 
 ### 🔄 v0.4.4 — *Build 044-20250411* (11/04/2025)
 - ✅ Novas informações retornadas via **SNMP**, **MQTT** e **API**
+  - ➕ SNMP: IP, Hostname e MAC
 - 🎨 Melhorias na interface gráfica (GUI).
   -  ➕ Possibilidade de alterar a porta padrão HTTP.
   -  ➕ Verificar atualização online.
@@ -23,6 +24,7 @@
 
 ### 🔄 v0.4.2 — *Build 042-20250302* (02/03/2025)
 - ✅ Adicionadas novas informações via **SNMP/MQTT/API**.
+  - ➕ SNMP: Nome dos Canais
 - 🎨 Melhorias visuais e funcionais na GUI.
 - 🐞 Correções de bugs menores.
 
