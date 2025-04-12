@@ -18,7 +18,7 @@ O EasyMonitor é uma linha de sensores e controladores inteligentes voltada para
 
 #### ⚡ Arquivos para Download:
 
-| Nome | Home |
+| Nome | Arquivos |
 |--------|----------|
 | Edge Series ETH    | [Abrir](./EdgeSeries/) |
 | Plus Series ETH    | [Abrir](./PlusSeries/) |
