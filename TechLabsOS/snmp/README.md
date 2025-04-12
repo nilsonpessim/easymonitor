@@ -1,8 +1,8 @@
-# SNMP - EasyMonitor
+# TechLabsOS - SNMP
 
 Esta pasta contém arquivos relacionados ao suporte SNMP dos dispositivos EasyMonitor, incluindo OIDs, templates e integrações com ferramentas de monitoramento.
 
-## 📂 Estrutura
+## 📂 Arquivos
 
 | Pasta     | Descrição |
 |-----------|-----------|
