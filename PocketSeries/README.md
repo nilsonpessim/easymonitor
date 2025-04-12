@@ -8,13 +8,13 @@ Esta pasta contém as versões da linha **PocketSeries** do EasyMonitor, com lin
 
 | Versão | Firmwares | Manual |
 |--------|----------|--------|
-| v1     | [Abrir](./Voltage/v1/firmware/) | - |
+| v1     | [Abrir PDF](./Voltage/v1/firmware/) | - |
 
 #### 🌡️ Temperature:
 
 | Versão | Firmwares | Manual |
 |--------|----------|--------|
-| v1     | [Abrir](./Temperature/v1/firmware/) | - |
+| v1     | [Abrir PDF](./Temperature/v1/firmware/) | - |
 
 > Basta clicar nos links acima para acessar os arquivos diretamente em seu navegador ou realizar o download.
 

@@ -10,14 +10,14 @@ Abaixo você encontra os links para download dos manuais organizados por versão
 
 | Versão | Manual |
 |--------|--------|
-| v0.4.4     | [Download PDF](./Eth/TechLabsOS-ETH-0.4.4.pdf) |
-| v0.4.3     | [Download PDF](./Eth/TechLabsOS-ETH-0.4.3.pdf) |
+| v0.4.4     | [Abrir PDF](./Eth/TechLabsOS-ETH-0.4.4.pdf) |
+| v0.4.3     | [Abrir PDF](./Eth/TechLabsOS-ETH-0.4.3.pdf) |
 
 #### WiFi:
 
 | Versão | Manual |
 |--------|--------|
-| v0.4.4     | [Download PDF](./WiFi/TechLabsOS-ETH-0.4.4.pdf) |
+| v0.4.4     | - |
 
 > Os manuais contêm instruções de instalação, configuração inicial, integração com plataformas compatíveis (como Home Assistant, SNMP, MQTT, etc.), e dicas de uso.
 
