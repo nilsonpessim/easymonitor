@@ -23,7 +23,6 @@ O EasyMonitor é uma linha de sensores e controladores inteligentes voltada para
 | 📂 Edge Series ETH    | [Abrir](./EdgeSeries/) |
 | 📂 Plus Series ETH    | [Abrir](./PlusSeries/) |
 | 📂 Pocket Series WiFi | [Abrir](./PocketSeries/) |
-| 📂 SNMP               | [Abrir](./SNMP/) |
 | 📂 TechLabsOS         | [Abrir](./TechLabsOS/) |
 
 ## 🌐 Site Oficial
