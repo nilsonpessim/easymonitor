@@ -4,10 +4,10 @@ Esta pasta contém as versões da linha **PlusSeries** do EasyMonitor, com links
 
 ## 📦 Versões Disponíveis
 
-| Versão | Firmware | Manual |
+| Versão | Firmwares | Manual |
 |--------|----------|--------|
-| v1     | [Download](./v1/firmware/) | [Abrir](./v1/manual/manual-do-usuario-em-plus-v2.pdf) |
-| v2     | [Download](./v2/firmware/) | [Abrir](./v2/manual/manual-do-usuario-em-plus-v2.pdf) |
+| v2     | [Abrir](./v2/firmware/) | [Abrir](./v2/manual/manual-do-usuario-em-plus-v2.pdf) |
+| v1     | [Abrir](./v1/firmware/) | - |
 
 > Basta clicar nos links acima para acessar os arquivos diretamente em seu navegador ou realizar o download.
 

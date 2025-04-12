@@ -1,4 +1,4 @@
-# EasyMonitor - EdgeSeries Temperature
+# EasyMonitor - EdgeSeries Voltage
 
 ## 📌 ChangeLog — TechLabsOS ETH
 

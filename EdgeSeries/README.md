@@ -6,15 +6,15 @@ Esta pasta contém as versões da linha **EdgeSeries** do EasyMonitor, com links
 
 #### ⚡ Voltage:
 
-| Versão | Firmware | Manual |
+| Versão | Firmwares | Manual |
 |--------|----------|--------|
-| v1     | [Download](./Voltage/v1/firmware/) | [Abrir](./Voltage/v1/manual/manual-do-usuario-em-edge-voltage.pdf) |
+| v1     | [Abrir](./Voltage/v1/firmware/) | [Abrir](./Voltage/v1/manual/manual-do-usuario-em-edge-voltage.pdf) |
 
 #### 🌡️ Temperature:
 
-| Versão | Firmware | Manual |
+| Versão | Firmwares | Manual |
 |--------|----------|--------|
-| v1     | [Download](./Temperature/v1/firmware/) | [Abrir](./Temperature/v1/manual/manual-do-usuario-em-edge-temperature.pdf) |
+| v1     | [Abrir](./Temperature/v1/firmware/) | [Abrir](./Temperature/v1/manual/manual-do-usuario-em-edge-temperature.pdf) |
 
 > Basta clicar nos links acima para acessar os arquivos diretamente em seu navegador ou realizar o download.
 
