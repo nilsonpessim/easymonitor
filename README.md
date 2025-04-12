@@ -16,6 +16,16 @@ Este repositório contém:
 
 O EasyMonitor é uma linha de sensores e controladores inteligentes voltada para monitoramento remoto de ambientes e equipamentos. Os dispositivos são compatíveis com protocolos padrão como **MQTT**, **SNMP** e **API**, facilitando a integração com plataformas como **Home Assistant**, **Zabbix**, **Grafana**, entre outros.
 
+#### ⚡ Arquivos para Download:
+
+| Nome | Home |
+|--------|----------|
+| EdgeSeries     | [Abrir](./EdgeSeries/) |
+| PlusSeries     | [Abrir](./PlusSeries/) |
+| PocketSeries     | [Abrir](./PocketSeries/) |
+| SNMP     | [Abrir](./SNMP/) |
+| TechLabsOS     | [Abrir](./TechLabsOS/) |
+
 ## 🌐 Site Oficial
 
 Acesse: [https://easymonitor.com.br](https://easymonitor.com.br)
