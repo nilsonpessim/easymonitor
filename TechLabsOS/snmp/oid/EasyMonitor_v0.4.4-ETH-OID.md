@@ -2,12 +2,11 @@
 
 Esta pasta contém OIDs SNMP para TechLabs ETH 0.4.3
 
-## 📂 Lista de OIDs
+## Informações do Sistema
 
-| Versão     | Arquivo |
-|-----------|-----------|
-| v0.4.4   | [Abrir](./EasyMonitor_v0.4.3-ETH-OID/)  |
-| v0.4.3   | [Abrir](./EasyMonitor_v0.4.3-ETH-OID/)  |
+| OID     | Descrição | Tipo | Parâmetros | Acesso
+|-----------|-----------|-----------|-----------|-----------|
+| .1.3.6.1.2.1.47.1.1.1.1.0.1 | DEVELOPER  |
 
 ---
 
