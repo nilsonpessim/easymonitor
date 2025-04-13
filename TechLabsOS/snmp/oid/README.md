@@ -7,7 +7,15 @@ Esta pasta contém OIDs SNMP
 | Versão     | Arquivo |
 |-----------|-----------|
 | v0.4.4   | [Abrir Lista](./EasyMonitor_v0.4.4-ETH-OID.md/)  |
-| v0.4.3   | - |
+| v0.4.3   | [Abrir Lista](./EasyMonitor_v0.4.3-ETH-OID.md/) |
+
+---
+
+## 📂 TechLabsOS WiFi
+
+| Versão     | Arquivo |
+|-----------|-----------|
+| v0.4.4   | - |
 
 ---
 
