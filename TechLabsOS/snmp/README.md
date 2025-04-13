@@ -4,7 +4,7 @@ Esta pasta contém arquivos relacionados ao suporte SNMP dos dispositivos EasyMo
 
 ## 📂 Arquivos
 
-| Pasta     | Descrição |
+| Nome     | Descrição |
 |-----------|-----------|
 | [dude](./dude/)   | Arquivos de integração com o **Dude** (MikroTik). |
 | [oid](./oid/)    | Tabelas completas de **OIDs** organizadas por versão do sistema TechLabsOS. Útil para consultas e integrações manuais. |
