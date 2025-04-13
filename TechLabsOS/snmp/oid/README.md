@@ -6,19 +6,9 @@ Esta pasta contém OIDs SNMP
 
 | Versão     | Arquivo |
 |-----------|-----------|
-| v0.4.4   | [Abrir Lista](./EasyMonitor_v0.4.4-ETH-OID.md/)  |
-| v0.4.3   | [Abrir Lista](./EasyMonitor_v0.4.3-ETH-OID.md/) |
-
-### 🔄 Changelog
-
-#### Novidades da Versão 0.4.4:
-
-#### 🧩 Informações do Sistema
-| OID     | Descrição | Tipo | Parâmetros | Acesso
-|-----------|-----------|-----------|-----------|-----------|
-| .1.3.6.1.2.1.47.1.1.1.1.0.5 | HOSTNAME  | STRING | - | read-only |
-| .1.3.6.1.2.1.47.1.1.1.1.0.6 | ENDEREÇO IP | STRING | - | read-only |
-| .1.3.6.1.2.1.47.1.1.1.1.0.7 | MAC ADDRESS | STRING | - | read-only |
+| Changelog   | [Abrir Changelog](./TechLabsOS-ETH-CHANGELOG.md/) |
+| v0.4.4   | [Abrir Lista](./TechLabsOS_v0.4.4-ETH-OID.md/)  |
+| v0.4.3   | [Abrir Lista](./TechLabsOS_v0.4.3-ETH-OID.md/) |
 
 ---
 
