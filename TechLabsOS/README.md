@@ -26,12 +26,17 @@ Abaixo você encontra os links para download dos manuais organizados por versão
 
 #### TechLabsOS ETH:
 
+> PlusSeries: v1, v2
+> EdgeSeries: Temperature v1, Voltage v1
+
 | Versão | Manual |
 |--------|--------|
 | v0.4.4     | [Abrir PDF](./manual/Eth/TechLabsOS-ETH-0.4.4.pdf) |
 | v0.4.3     | [Abrir PDF](./manual/Eth/TechLabsOS-ETH-0.4.3.pdf) |
 
 #### TechLabsOS WiFi:
+
+> PocketSeries: Temperature v1, Voltage v1
 
 | Versão | Manual |
 |--------|--------|

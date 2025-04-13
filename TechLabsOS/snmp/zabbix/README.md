@@ -4,7 +4,7 @@ Esta pasta contém arquivos de templates para o Zabbix.
 
 ## 📘 PlusSeries
 
-> PlusSeries v1, v2
+> PlusSeries: v1, v2
 
 | Nome     | Download | Zabbix |
 |-----------|-----------|-----------|
@@ -13,19 +13,23 @@ Esta pasta contém arquivos de templates para o Zabbix.
 
 ## 📘 EdgeSeries
 
-| Nome     | Download |
-|-----------|-----------|
-| 📂 Temperature  | [Download YAML](./EdgeSeriesTemperature.yaml/) |
-| 📂 Voltage  | [Download YAML](./EdgeSeriesVoltage.yaml/) |
-| 📂 Voltage 96V com DS18B20 | [Download YAML](./EdgeSeriesVoltage96V.yaml/) |
+> EdgeSeries: Temperature v1, Voltage v1
+
+| Nome     | Download | Zabbix |
+|-----------|-----------|-----------|
+| 📂 Temperature  | [Download YAML](./EdgeSeriesTemperature.yaml/) | 7.2 |
+| 📂 Voltage  | [Download YAML](./EdgeSeriesVoltage.yaml/) | 7.2 |
+| 📂 Voltage 96V com DS18B20 | [Download YAML](./EdgeSeriesVoltage96V.yaml/) | 7.2 |
 ---
 
 ## 📘 PocketSeries
 
-| Nome     | Download |
-|-----------|-----------|
-| 📂 Temperature  | [Download YAML](./PocketSeriesTemperature.yaml/) |
-| 📂 Voltage  | - |
+> PocketSeries: Temperature v1, Voltage v1
+
+| Nome     | Download | Zabbix |
+|-----------|-----------|-----------|
+| 📂 Temperature  | [Download YAML](./PocketSeriesTemperature.yaml/) | 7.2 |
+| 📂 Voltage  | - | - |
 ---
 
 📌 *Se você utiliza sistemas de monitoramento externos, como o Zabbix ou Dude, esta pasta é essencial para uma integração eficiente.*
