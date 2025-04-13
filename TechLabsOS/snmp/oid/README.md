@@ -6,9 +6,9 @@ Esta pasta contém OIDs SNMP
 
 | Versão     | Arquivo |
 |-----------|-----------|
-| Changelog   | [Abrir Changelog](./TechLabsOS-ETH-CHANGELOG.md/) |
-| v0.4.4   | [Abrir Lista](./TechLabsOS_v0.4.4-ETH-OID.md/)  |
-| v0.4.3   | [Abrir Lista](./TechLabsOS_v0.4.3-ETH-OID.md/) |
+| Novidades   | [Changelog](./TechLabsOS-ETH-CHANGELOG.md/) |
+| v0.4.4   | [Lista OID](./TechLabsOS_v0.4.4-ETH-OID.md/)  |
+| v0.4.3   | [Lista OID](./TechLabsOS_v0.4.3-ETH-OID.md/) |
 
 ---
 

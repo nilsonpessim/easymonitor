@@ -1,10 +1,10 @@
-## 🔄 Changelog
+# 🔄 Changelog
 
 ---
 
-## v0.4.4:
+# v0.4.4:
 
-### OIDs Adicionadas:
+### ➕ OIDs Adicionadas:
 
 #### 🧩 Informações do Sistema
 | OID     | Descrição | Tipo | Parâmetros | Acesso
