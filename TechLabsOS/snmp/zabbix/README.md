@@ -2,14 +2,14 @@
 
 Esta pasta contém arquivos de templates para o Zabbix.
 
-## 📂 PlusSeries
+## 📘 PlusSeries
 
 | Nome     | Download |
 |-----------|-----------|
 | 📂 PlusSeries  | [Download YAML](./PlusSeries.yaml/) |
 ---
 
-## 📂 EdgeSeries
+## 📘 EdgeSeries
 
 | Nome     | Download |
 |-----------|-----------|
@@ -18,7 +18,7 @@ Esta pasta contém arquivos de templates para o Zabbix.
 | 📂 Voltage 96V com DS18B20 | [Download YAML](./EdgeSeries Voltage 96V.yaml/) |
 ---
 
-## 📂 PocketSeries
+## 📘 PocketSeries
 
 | Nome     | Download |
 |-----------|-----------|
