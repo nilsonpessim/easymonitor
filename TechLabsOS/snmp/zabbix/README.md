@@ -4,9 +4,9 @@ Esta pasta contém arquivos de templates para o Zabbix.
 
 ## 📘 PlusSeries
 
-| Nome     | Download |
+| Nome     | Download | Zabbix | Produtos |
 |-----------|-----------|
-| 📂 PlusSeries  | [Download YAML](./PlusSeries.yaml/) |
+| 📂 PlusSeries  | [Download YAML](./PlusSeries.yaml/) | 7.2 | V1, V2 |
 ---
 
 ## 📘 EdgeSeries
