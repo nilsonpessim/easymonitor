@@ -30,21 +30,21 @@ Abaixo você encontra os links para download dos manuais organizados por versão
 
 ---
 
-## 🧩 API: Interface de comunicação com autenticação por token
+## 🧠 SNMP: Monitoramento com Zabbix, The Dude e outros sistemas
 
-| [📂 Documentação API](./api) |
+[📂 Documentação SNMP](./snmp)
 
 ---
 
 ## 📡 MQTT: Integração com brokers MQTT e plataformas como Home Assistant
 
-| [📂 Documentação MQTT](./mqtt) |
+[📂 Documentação MQTT](./mqtt)
 
 ---
 
-## 🧠 SNMP: Monitoramento com Zabbix, The Dude e outros sistemas
+## 🧩 API: Interface de comunicação com autenticação por token
 
-| [📂 Documentação SNMP](./snmp) |
+[📂 Documentação API](./api)
 
 ---
 
