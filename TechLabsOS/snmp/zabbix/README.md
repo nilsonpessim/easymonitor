@@ -13,16 +13,16 @@ Esta pasta contém arquivos de templates para o Zabbix.
 
 | Nome     | Download |
 |-----------|-----------|
-| 📂 Temperature  | [Download YAML](./EdgeSeries Temperature.yaml/) |
-| 📂 Voltage  | [Download YAML](./EdgeSeries Voltage.yaml/) |
-| 📂 Voltage 96V com DS18B20 | [Download YAML](./EdgeSeries Voltage 96V.yaml/) |
+| 📂 Temperature  | [Download YAML](./EdgeSeriesTemperature.yaml/) |
+| 📂 Voltage  | [Download YAML](./EdgeSeriesVoltage.yaml/) |
+| 📂 Voltage 96V com DS18B20 | [Download YAML](./EdgeSeriesVoltage96V.yaml/) |
 ---
 
 ## 📘 PocketSeries
 
 | Nome     | Download |
 |-----------|-----------|
-| 📂 Temperature  | [Download YAML](./PocketSeries Temperature.yaml/) |
+| 📂 Temperature  | [Download YAML](./PocketSeriesTemperature.yaml/) |
 | 📂 Voltage  | - |
 ---
 
