@@ -6,8 +6,8 @@ Esta pasta contém OIDs SNMP
 
 | Versão     | Arquivo |
 |-----------|-----------|
-| v0.4.4   | [dude/](./dude/)  |
-| v0.4.3   | [dude/](./dude/)  |
+| v0.4.4   | [Abrir](./EasyMonitor_v0.4.3-ETH-OID/)  |
+| v0.4.3   | [Abrir](./EasyMonitor_v0.4.3-ETH-OID/)  |
 
 ---
 
