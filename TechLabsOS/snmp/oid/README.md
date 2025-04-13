@@ -12,6 +12,7 @@ Esta pasta contém OIDs SNMP
 ### 🔄 Changelog
 
 #### v0.4.4
+
 |-----------|-----------|-----------|-----------|-----------|
 | .1.3.6.1.2.1.47.1.1.1.1.0.5 | HOSTNAME  | STRING | - | read-only |
 | .1.3.6.1.2.1.47.1.1.1.1.0.6 | ENDEREÇO IP | STRING | - | read-only |
