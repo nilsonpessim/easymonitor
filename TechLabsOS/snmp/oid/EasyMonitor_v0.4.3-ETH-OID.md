@@ -1,6 +1,6 @@
 # TechLabsOS ETH 0.4.3 - OID SNMP 
 
-Esta pasta contém OIDs SNMP para TechLabsOS ETH 0.4.3
+Esta lista contém OIDs SNMP para TechLabsOS ETH 0.4.3
 
 ## 🧩 Informações do Sistema
 
