@@ -26,7 +26,7 @@ Abaixo você encontra os links para download dos manuais organizados por versão
 
 #### TechLabsOS ETH:
 
-> PlusSeries: v1, v2
+> PlusSeries: v1, v2   
 > EdgeSeries: Temperature v1, Voltage v1
 
 | Versão | Manual |
