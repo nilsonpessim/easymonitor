@@ -1,6 +1,6 @@
 {
     "version": "0.4.4",
     "build": "044-20250422",
-    "url": "https://github.com/nilsonpessim/easymonitor/raw/refs/heads/main/EdgeSeries/Temperature/v1/firmware/emetv1-0.4.3-build-043-20250325.bin",
-    "changelog": "https://github.com/nilsonpessim/easymonitor/tree/main/PlusSeries/v2/firmware"
+    "url": "https://github.com/nilsonpessim/easymonitor/raw/refs/heads/main/EdgeSeries/Temperature/v1/firmware/emetv1-0.4.4-build-044-20250422.bin",
+    "changelog": "https://github.com/nilsonpessim/easymonitor/tree/main/EdgeSeries/Temperature/v1/firmware"
 }
